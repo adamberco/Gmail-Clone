@@ -1,0 +1,20 @@
+
+/*  Basics */
+@import "basics/base.css";
+@import "basics/helpers.css";
+@import "basics/layout.css";
+@import "basics/animations.css";
+
+/* Pages */
+@import "./pages/home.css";
+@import "./pages/mail-details.css";
+@import "./pages/mail-edit.css";
+@import "./pages/about.css";
+
+/* Components */
+@import "./cmps/mail-list.css";
+@import "./cmps/mail-preview.css";
+@import "./cmps/mail-filter.css";
+@import "./cmps/app-header.css";
+
+

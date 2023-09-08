@@ -1,0 +1,10 @@
+.mail-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.mail-details > * {
+    margin-top: 10px;
+}

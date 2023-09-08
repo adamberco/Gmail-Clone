@@ -1,0 +1,21 @@
+.mail-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mail-edit form {
+    display: flex;
+    flex-direction: column;
+}
+
+.mail-edit form label {
+    margin-top: 20px;
+}
+
+.mail-edit form button {
+    width: 50%;
+    margin-top: 40px;
+    align-self: center;
+}
