@@ -33,7 +33,7 @@ export function MailIndex() {
 
     async function onRemoveMail(mailId) {
         try {
-            console.log('mailId', mailId);
+            // console.log('mailId', mailId);
             await mailService.remove(mailId)
             setMails((prevMails) => prevMails.filter(mail => mail.id !== mailId))
         } catch (err) {
@@ -41,7 +41,7 @@ export function MailIndex() {
         }
     }
 
-    console.log('filterBy from index', filterBy);
+    // console.log('filterBy from index', filterBy);
     if (!mails) return <div>Loading..</div>
     return <section className="mail-index">
         <h1>Welcome! this is our mails</h1>

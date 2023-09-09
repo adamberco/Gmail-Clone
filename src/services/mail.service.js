@@ -59,9 +59,9 @@ function getDefaultFilter() {
 
 function _createMails() {
 	const mails = [
-		{ id: 'e101', subject: 'Miss you!', body: 'Would love to catch up sometime', isRead: false, isStarred: false, sentAt: 1551133930594, removedAt: null },
-		{ id: 'e102', subject: 'Meeting Tomorrow', body: "Don't forget our meeting tomorrow at 2 PM.", isRead: false, isStarred: true, sentAt: 1631088000000, removedAt: null },
-		{ id: 'e103', subject: 'Happy Birthday!', body: 'Wishing you a fantastic birthday filled with joy and laughter.', isRead: false, isStarred: false, sentAt: 1672876800000, removedAt: null },
+		{ id: 'e101e101e101e101e101e101e101e101e101', subject: 'Miss you! Meeting Tomorrow Meeting Tomorrow Meeting Tomorrow Meeting Tomorrow', body: 'Would love to catch up sometime? Would love to catch up sometime? Would love to catch up sometime? Would love to catch up sometime?Would love to catch up sometime?', isRead: false, isStarred: false, sentAt: 1551133930594, removedAt: null },
+		{ id: 'e102', subject: 'Meeting Tomorrow Meeting Tomorrow Meeting Tomorrow Meeting Tomorrow', body: "Don't forget our meeting tomorrow at 2 PM.", isRead: false, isStarred: true, sentAt: 1694179623863, removedAt: null },
+		{ id: 'e103', subject: 'Happy Birthday!', body: 'Wishing you a fantastic birthday filled with joy and laughter.', isRead: false, isStarred: false, sentAt: 1694179621500, removedAt: null },
 		{ id: 'e104', subject: 'Job Opportunity', body: 'Exciting job opportunity at our company. Are you interested?', isRead: true, isStarred: true, sentAt: 1626547200000, removedAt: null },
 		{ id: 'e105', subject: 'Vacation Plans', body: "Let's plan our vacation for this summer. Any suggestions?", isRead: false, isStarred: false, sentAt: 1692105600000, removedAt: null },
 		{ id: 'e106', subject: 'Important Update', body: 'Please review the attached document for an important update.', isRead: true, isStarred: false, sentAt: 1700000000000, removedAt: null },
