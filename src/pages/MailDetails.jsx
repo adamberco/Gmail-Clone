@@ -3,6 +3,9 @@ import { useNavigate, useParams } from 'react-router'
 import { mailService } from '../services/mail.service'
 import { Link } from 'react-router-dom'
 
+import { MailHeader } from "../cmps/MailHeader";
+
+
 export function MailDetails() {
 	const [mail, setMail] = useState(null)
 	const params = useParams()
@@ -25,14 +28,14 @@ export function MailDetails() {
 	if (!mail) return <div>Loading..</div>
 	return (
 		<section className='mail-details'>
-			<span>Subject: {mail.subject}</span>
-			<span>Body: {mail.body}</span>
+			<MailHeader subject = {mail.subject}/>
+			<header>{mail.subject}</header>
+			<pre>{mail.body}</pre>
 			<span>isRead? {mail.isRead + ''}</span>
 			<span>isStarred? {mail.isStarred + ''}</span>
 			<span>sentAt? {mail.sentAt + ''}</span>
 			<span>removedAt? {mail.removedAt + ''}</span>
 			<Link to='/mail'>Go back</Link>
-			{/* <Link to='/mail/r1'>Next mail</Link> */}
 		</section>
 	)
 }
