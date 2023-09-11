@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { Fragment } from 'react'
 
 export function MailPreview({ mail }) {
 	function dateToDisplay() {
@@ -16,24 +17,26 @@ export function MailPreview({ mail }) {
 		}
 	}
 
-	function byToDisplay() {
-		return mail.id.length > 21 ? mail.id.slice(0, 21) + '.' : mail.id
+	const navigate = useNavigate()
+
+	function handelClick({target}) {
+		if (target.localName === 'span' || target.localName === 'input') return
+		navigate(`/mail/${mail.id}`)
+
 	}
 
 	return (
-		<article className={'mail-preview ' + (!mail.isRead ? 'unread' : '')}>
-			<p>
+		<article className={'mail-preview ' + (!mail.isRead ? 'unread' : '')} onClick={handelClick}>
+			<span>
 				<input type='checkbox' />
-			</p>
-			<p> {mail.isStarred ? '⭐' : '🌕'}</p>
-				<p className='from'>{byToDisplay()}</p>
-				<p className='content'>
-					<p className='mail-subject'>{mail.subject + ' - '}</p>
-					<p className='mail-body'>{mail.body}</p>
-				</p>
+			</span>
+			<span> {mail.isStarred ? '⭐' : '🌕'}</span>
+			<p className='from'>{mail.id}</p>
+			<div className='content'>
+				<p className='mail-subject'>{mail.subject + ' - '}</p>
+				<p className='mail-body'>{mail.body}</p>
+			</div>
 			<p>{dateToDisplay()}</p>
 		</article>
 	)
 }
-
-// 		{ id: 'e101', subject: 'Miss you!', body: 'Would love to catch up sometime', isRead: false, isStarred: false, sentAt: 1551133930594, removedAt: null },

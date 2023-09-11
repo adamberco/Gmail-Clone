@@ -18,8 +18,11 @@ async function query(filterBy) {
 
 	if (filterBy) {
 		let { status, txt = '', isRead, isStarred } = filterBy
-		mails = mails.filter((mail) => mail.subject.toLowerCase().includes(txt.toLowerCase()) || mail.body.toLowerCase().includes(txt.toLowerCase()))
+		isRead = isRead === 'true' ? true : isRead === 'false' ? false : isRead
+		mails = mails.filter((mail) => (mail.subject.toLowerCase().includes(txt.toLowerCase()) || mail.body.toLowerCase().includes(txt.toLowerCase()))
+		&& (isRead === 'all' || mail.isRead === isRead ))
 	}
+
 	return mails
 }
 
@@ -52,7 +55,7 @@ function getDefaultFilter() {
 	return {
 		status: '', //'inbox/sent/star/trash'
 		txt: '', // no need to support complex text search
-		isRead: null, //true/false/null
+		isRead: 'all', //true/false/all
 		isStarred: null,
 	}
 }
