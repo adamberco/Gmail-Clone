@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { Fragment } from 'react'
+import { Icon } from './icon'
 
 export function MailPreview({ mail }) {
 	function dateToDisplay() {
@@ -20,7 +20,10 @@ export function MailPreview({ mail }) {
 	const navigate = useNavigate()
 
 	function handelClick({target}) {
-		if (target.localName === 'span' || target.localName === 'input') return
+		
+		console.log("🚀 ~ file: MailPreview.jsx:25 ~ handelClick ~ target.localName:", target.localName)
+		if (target.localName === 'svg' || target.localName === 'input') return
+		
 		navigate(`/mail/${mail.id}`)
 
 	}
@@ -30,6 +33,7 @@ export function MailPreview({ mail }) {
 			<span>
 				<input type='checkbox' />
 			</span>
+			<Icon iconName={'star'}/>
 			<span> {mail.isStarred ? '⭐' : '🌕'}</span>
 			<p className='from'>{mail.id}</p>
 			<div className='content'>
